@@ -15,11 +15,26 @@
 @import "bootstrap-sprockets";
 @import "bootswatch/bootstrap";
 
-.center-input {
-  width: 90%;
+.center {
   margin: 0 auto;
+  .input {
+    width: 90%;
+  }
 }
 
 .margin-1em {
   margin: auto 1em;
 }
+
+.loan-form {
+  max-width: 320px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
