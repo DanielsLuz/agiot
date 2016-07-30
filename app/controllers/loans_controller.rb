@@ -8,9 +8,12 @@ class LoansController < ApplicationController
   def create
     @loan = Loan.new loan_params
     @current_user.loan = @loan
-    @loan.save
+    if @loan.save
+      redirect_to '/', notice: "Emprestimo processado."
+    else
+      redirect_to '/', alert: "Emprestimo NÃO aceito!"
+    end
 
-    redirect_to '/'
   end
 
   private
