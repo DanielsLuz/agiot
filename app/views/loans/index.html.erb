@@ -1,0 +1,5 @@
+<h1>Quanto você quer emprestado?</h1>
+<%= form_for @loan do |f| %>
+  <%= f.number_field :value %>
+  <%= f.submit "Pedir!" %>
+<% end %>
