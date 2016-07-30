@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs">
+<li class="active"><a aria-expanded="true" href="#loan" data-toggle="tab">Empréstimo</a> </li>
+<li class=""><a aria-expanded="false" href="#situation" data-toggle="tab">Sua situação</a> </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="loan">
+    <div class="loan-form center">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          Quanto você quer emprestado?
+        </div>
+        <div class="panel-body">
+          <%= form_for @loan, html: { class: 'form-horizontal form-group' } do |f| %>
+            <div class="form-group">
+              <%= f.label :value, value: 'Valor', class: 'control-label margin-1em' %>
+              <%= f.number_field :value, class: 'form-control center input' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :paytime, value: 'Meses para pagar', 
+                class: 'control-label margin-1em'%>
+              <%= f.number_field :paytime, class: 'form-control center input' %>
+            </div>
+            <%= f.submit "Pedir!", class: "btn btn-warning btn-block" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="situation">
+    <h1>Aqui se encontrará a situação dos seus empréstimos</h1>
+  </div>
+</div>
