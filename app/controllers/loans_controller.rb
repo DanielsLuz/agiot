@@ -10,7 +10,6 @@ class LoansController < ApplicationController
     @current_user.loan = @loan
     @loan.save
 
-    debugger
     redirect_to '/'
   end
 

@@ -1,9 +1,20 @@
-<h1>Quanto você quer emprestado?</h1>
-<%= form_for @loan do |f| %>
-  <%= f.label :value %>
-  <%= f.number_field :value %>
-
-  <%= f.label :paytime, value: 'Meses para pagar' %>
-  <%= f.number_field :paytime %>
-  <%= f.submit "Pedir!" %>
-<% end %>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    Quanto você quer emprestado?
+  </div>
+  <div class="panel-body">
+    <%= form_for @loan, html: { class: 'form-horizontal form-group' } do |f| %>
+      <div class="form-group">
+        <%= f.label :value, value: 'Valor', class: 'control-label margin-1em' %>
+        <%= f.number_field :value, class: 'form-control center-input' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :paytime, value: 'Meses para pagar', 
+                              class: 'control-label margin-1em'%>
+        <%= f.number_field :paytime, class: 'form-control center-input' %>
+      </div>
+      <%= f.submit "Pedir!", class: "btn btn-warning btn-block" %>
+    <% end %>
+  </div>
+</div>
+</div>
