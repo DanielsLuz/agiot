@@ -1,5 +1,5 @@
 class LoansController < ApplicationController
-  before_action :mocks_user, only: [:create]
+  before_action :mocks_user, only: [:index, :create]
 
   def index
     @loan = Loan.new

@@ -40,4 +40,12 @@ RSpec.describe Loan, type: :model do
     loan = Loan.new(valid_attributes)
     expect(loan.paid).to be false
   end
+
+  it 'converts paid situation to string' do
+    loan = Loan.new(valid_attributes)
+    expect(loan.paid_text).to eq("Aberto")
+
+    loan.pay
+    expect(loan.paid_text).to eq("Pago!")
+  end
 end
