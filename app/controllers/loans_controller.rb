@@ -15,7 +15,8 @@ class LoansController < ApplicationController
         notice: 
         "Emprestimo processado. Verifique sua situação na aba 'Sua situação'"
     else
-      redirect_to root_path, alert: "Emprestimo NÃO aceito!"
+      redirect_to root_path, 
+        alert: "Emprestimo não aceito! Você deve pagar seu último empréstimo"
     end
 
   end
