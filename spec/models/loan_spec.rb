@@ -35,4 +35,9 @@ RSpec.describe Loan, type: :model do
     loan.user = nil
     expect(loan).to be_invalid
   end
+
+  it 'creates an unpaid loan' do
+    loan = Loan.new(valid_attributes)
+    expect(loan.paid).to be false
+  end
 end
