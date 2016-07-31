@@ -57,6 +57,21 @@ RSpec.describe LoansController, type: :controller do
       post :create, params: { loan: valid_attributes }
       expect(Loan.all.size).to eq(1)
     end
+  end
 
+  context 'paying a loan' do
+    before :each do
+      User.create!(name: "Foo")
+      @loan = Loan.new( value: 1, paytime: 1 )
+      @loan.to(User.first)
+      @loan.save
+    end
+
+    it 'pays an opened loan' do
+      expect(@loan.paid).to be false
+      post :pay, params: { id: @loan.id }
+      @loan.reload
+      expect(@loan.paid).to be true
+    end
   end
 end

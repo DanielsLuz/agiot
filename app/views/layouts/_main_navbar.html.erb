@@ -37,6 +37,9 @@
             <% @current_user.loans.each do |loan| %>
               <%= loan.value  %> 
               <%= loan.paid_text  %>
+              <% if !loan.paid %>
+                <%= button_to "Pagar!", pay_loan_path(loan.id) %>
+              <% end %>
             <% end %>
           </div>
         </div>

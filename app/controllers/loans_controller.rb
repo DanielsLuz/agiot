@@ -1,5 +1,6 @@
 class LoansController < ApplicationController
   before_action :mocks_user, only: [:index, :create]
+  before_action :set_loan, only: [:pay]
 
   def index
     @loan = Loan.new
@@ -10,11 +11,18 @@ class LoansController < ApplicationController
     @loan.to(@current_user)
 
     if @loan.save
-      redirect_to root_path, notice: "Emprestimo processado."
+      redirect_to root_path, 
+        notice: 
+        "Emprestimo processado. Verifique sua situação na aba 'Sua situação'"
     else
       redirect_to root_path, alert: "Emprestimo NÃO aceito!"
     end
 
+  end
+
+  def pay
+    @loan.pay
+    redirect_to root_path
   end
 
   private
@@ -25,5 +33,9 @@ class LoansController < ApplicationController
 
   def loan_params
     params.require(:loan).permit(:value, :paytime)
+  end
+
+  def set_loan
+    @loan = Loan.find(params[:id])
   end
 end
