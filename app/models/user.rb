@@ -5,4 +5,8 @@ class User < ApplicationRecord
   def has_unpaid_loans
     !loans.where("paid = ?", false).empty?
   end
+
+  def ordered_loans
+    loans.sort_by(&:created_at).reverse!
+  end
 end
