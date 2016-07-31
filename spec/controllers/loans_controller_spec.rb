@@ -7,17 +7,11 @@ RSpec.describe LoansController, type: :controller do
   end
 
   let(:valid_attributes){
-    {
-      value: 1,
-      paytime: 1
-    }
+    { value: 1, paytime: 1 }
   }
 
   let(:new_attributes){
-    {
-      value: 2,
-      paytime: 2
-    }
+    { value: 2, paytime: 2 }
   }
 
   it 'creates a new loan' do
