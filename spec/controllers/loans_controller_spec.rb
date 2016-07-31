@@ -28,15 +28,4 @@ RSpec.describe LoansController, type: :controller do
     post :create, params: { loan: valid_attributes }
     expect(Loan.last.paytime).to eq(1)
   end
-
-  it 'maintains the user only with one loan' do
-    user = User.first
-
-    post :create, params: { loan: valid_attributes }
-    expect(user.loan.value).to eq 1
-
-    post :create, params: { loan: new_attributes }
-    user.reload
-    expect(user.loan.value).to eq 2
-  end
 end

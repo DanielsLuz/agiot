@@ -1,4 +1,4 @@
 class User < ApplicationRecord
   validates :name, presence: true
-  has_one :loan
+  has_many :loans
 end
