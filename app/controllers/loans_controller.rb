@@ -18,6 +18,7 @@ class LoansController < ApplicationController
 
   def pay
     @loan.pay
+    UserMailer.send_verification_mail
     redirect_to root_path
   end
 
