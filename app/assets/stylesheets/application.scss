@@ -13,25 +13,6 @@
  */
 
 @import "bootstrap-sprockets";
-@import "bootswatch/bootstrap";
+@import "bootswatch/index";
+@import "default/index";
 @import "loans";
-
-.center {
-  margin: 0 auto;
-  .input {
-    width: 90%;
-  }
-}
-
-.margin-1em {
-  margin: auto 1em;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
