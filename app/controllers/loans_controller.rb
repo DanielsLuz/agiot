@@ -1,10 +1,5 @@
 class LoansController < ApplicationController
-  before_action :mocks_user, only: [:index, :create]
   before_action :set_loan, only: [:pay]
-
-  def index
-    @loan = Loan.new
-  end
 
   def create
     @loan = Loan.new loan_params
@@ -27,10 +22,6 @@ class LoansController < ApplicationController
   end
 
   private
-
-  def mocks_user
-    @current_user = User.first
-  end
 
   def loan_params
     params.require(:loan).permit(:value, :paytime)

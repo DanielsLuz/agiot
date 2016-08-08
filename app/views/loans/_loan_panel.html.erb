@@ -5,7 +5,7 @@
         Quanto você quer emprestado?
       </div>
       <div class="panel-body">
-        <%= form_for @loan, html: { class: 'form-horizontal form-group' } do |f| %>
+        <%= form_for new_loan_path, html: { class: 'form-horizontal form-group' } do |f| %>
           <div class="form-group">
             <%= f.label :value, value: 'Valor', class: 'control-label margin-1em' %>
             <%= f.number_field :value, class: 'form-control center input' %>
