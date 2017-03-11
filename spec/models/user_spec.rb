@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'has unpaid loans' do
-      expect(@user.has_unpaid_loans).to be true
+      expect(@user.unpaid_loans?).to be true
     end
   end
 end

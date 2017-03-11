@@ -1,3 +1,15 @@
+AllCops:
+    Exclude:
+      - 'vendor/**/*'
+      - 'spec/**/*'
+      - 'config/**/*'
+      - 'db/**/*'
+      - 'lib/**/*'
+      - 'bin/*'
+      - 'Gemfile'
+      - 'config.ru'
+      - 'Gemfile.lock'
+      - 'Rakefile'
 # Commonly used screens these days easily fit more than 80 characters.
 Metrics/LineLength:
   Max: 120
@@ -22,10 +34,6 @@ Style/SpaceAroundEqualsInParameterDefault:
 # are needed.
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-
-# We do not need to support Ruby 1.9, so this is good to use.
-Style/SymbolArray:
-  Enabled: true
 
 # Most readable form.
 Style/AlignHash:

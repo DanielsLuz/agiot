@@ -6,14 +6,12 @@ class LoansController < ApplicationController
     @loan.to(@current_user)
 
     if @loan.save
-      redirect_to root_path, 
-        notice: 
-        "Emprestimo processado. Verifique sua situação na aba 'Sua situação'"
+      redirect_to root_path,
+                  notice: "Emprestimo processado. Verifique sua situação na aba 'Sua situação'"
     else
-      redirect_to root_path, 
-        alert: "Emprestimo não aceito! Você deve pagar seu último empréstimo"
+      redirect_to root_path,
+                  alert: "Emprestimo não aceito! Você deve pagar seu último empréstimo"
     end
-
   end
 
   def pay

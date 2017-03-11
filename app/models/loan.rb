@@ -10,14 +10,10 @@ class Loan < ApplicationRecord
   end
 
   def to(user)
-    self.user_id = user.id unless user.has_unpaid_loans
+    self.user_id = user.id unless user.unpaid_loans?
   end
 
   def paid_text
-    if paid
-      "Pago!"
-    else
-      "Aberto"
-    end
+    paid ? "Pago!" : "Aberto"
   end
 end
